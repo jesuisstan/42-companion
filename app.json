@@ -31,6 +31,15 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "7c7f4dce-7121-40d4-b98a-fa7862973758"
+      }
+    },
+    "owner": "jesuisstan"
   }
 }
