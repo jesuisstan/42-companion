@@ -6,11 +6,12 @@ import { ExternalLink } from '@/components/ExternalLink';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import { C42_ORANGE, C42_ORANGE_DARK } from '@/constants/Colors';
 
-export default function TabTwoScreen() {
+const TabTwoScreen = () => {
   return (
     <ParallaxScrollView
-      headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
+      headerBackgroundColor={{ light: C42_ORANGE, dark: C42_ORANGE_DARK }}
       headerImage={
         //<Ionicons size={310} name="woman-sharp" style={styles.headerImage} /> // Original todo delete
         <Image
@@ -20,7 +21,7 @@ export default function TabTwoScreen() {
       }
     >
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Explore</ThemedText>
+        <ThemedText type="title">Profile</ThemedText>
       </ThemedView>
       <ThemedText>
         This app includes example code to help you get started.
@@ -112,13 +113,16 @@ export default function TabTwoScreen() {
       </Collapsible>
     </ParallaxScrollView>
   );
-}
+};
+
+export default TabTwoScreen;
 
 const styles = StyleSheet.create({
   headerImage: {
-    color: '#808080',
-    bottom: -42,
-    //left: -35,
+    height: 242,
+    width: 242,
+    bottom: 0,
+    right: 0,
     position: 'absolute'
   },
   titleContainer: {

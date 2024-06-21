@@ -4,15 +4,18 @@ import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import { Collapsible } from '@/components/Collapsible';
+import { ExternalLink } from '@/components/ExternalLink';
+import { C42_GREEN, C42_GREEN_DARK } from '@/constants/Colors';
 
-export default function HomeScreen() {
+const HomeScreen = () => {
   return (
     <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
+      headerBackgroundColor={{ light: C42_GREEN, dark: C42_GREEN_DARK }}
       headerImage={
         <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
+          source={require('@/assets/images/ecole-42.png')}
+          style={styles.ecoleLogo}
         />
       }
     >
@@ -21,15 +24,42 @@ export default function HomeScreen() {
         <HelloWave />
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
         <ThemedText>
-          Edit{' '}
-          <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText>{' '}
-          to see changes. Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({ ios: 'cmd + d', android: 'cmd + m' })}
-          </ThemedText>{' '}
-          to open developer tools.
+          <ThemedText type="defaultSemiBold">42-companion</ThemedText> is
+          helpful to:
+        </ThemedText>
+        <Collapsible title="Track 42 students contacts">
+          <ThemedText>
+            - login
+            <br />
+            - email
+            <br />
+            - mobile
+            <br />
+            - location
+            <br />- profile picture
+          </ThemedText>
+        </Collapsible>
+        <Collapsible title="Track 42 students progress">
+          <ThemedText>
+            - level
+            <br />
+            - wallet
+            <br />- skills
+          </ThemedText>
+        </Collapsible>
+        <Collapsible title="Track 42 students activity">
+          <ThemedText>
+            - projects
+            <br />- evaluations
+          </ThemedText>
+        </Collapsible>
+      </ThemedView>
+      <ThemedView style={styles.stepContainer}>
+        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
+        <ThemedText>
+          Tap the Explore tab to learn more about what's included in this
+          starter app.
         </ThemedText>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
@@ -40,19 +70,38 @@ export default function HomeScreen() {
         </ThemedText>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
+        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
         <ThemedText>
-          When you're ready, run{' '}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText>{' '}
-          to get a fresh <ThemedText type="defaultSemiBold">app</ThemedText>{' '}
-          directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
+          Tap the Explore tab to learn more about what's included in this
+          starter app.
+        </ThemedText>
+      </ThemedView>{' '}
+      <ThemedView style={styles.stepContainer}>
+        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
+        <ThemedText>
+          Tap the Explore tab to learn more about what's included in this
+          starter app.
+        </ThemedText>
+      </ThemedView>{' '}
+      <ThemedView style={styles.stepContainer}>
+        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
+        <ThemedText>
+          Tap the Explore tab to learn more about what's included in this
+          starter app.
+        </ThemedText>
+      </ThemedView>{' '}
+      <ThemedView style={styles.stepContainer}>
+        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
+        <ThemedText>
+          Tap the Explore tab to learn more about what's included in this
+          starter app.
         </ThemedText>
       </ThemedView>
     </ParallaxScrollView>
   );
-}
+};
+
+export default HomeScreen;
 
 const styles = StyleSheet.create({
   titleContainer: {
@@ -64,9 +113,9 @@ const styles = StyleSheet.create({
     gap: 8,
     marginBottom: 8
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
+  ecoleLogo: {
+    height: 242,
+    width: 242,
     bottom: 0,
     left: 0,
     position: 'absolute'
