@@ -1,12 +1,15 @@
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { StyleSheet, Image, Platform } from 'react-native';
+import { StyleSheet, Image, Platform, Dimensions } from 'react-native';
 
 import { Collapsible } from '@/components/Collapsible';
 import { ExternalLink } from '@/components/ExternalLink';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
-import { C42_ORANGE, C42_ORANGE_DARK } from '@/constants/Colors';
+import { C42_ORANGE, C42_ORANGE_DARK } from '@/style/Colors';
+
+// Get the width of the screen
+const { width: screenWidth } = Dimensions.get('window');
 
 const TabTwoScreen = () => {
   return (
@@ -122,7 +125,7 @@ const styles = StyleSheet.create({
     height: 242,
     width: 242,
     bottom: 0,
-    right: 0,
+    right: screenWidth * 0.09,
     position: 'absolute'
   },
   titleContainer: {

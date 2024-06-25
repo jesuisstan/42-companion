@@ -1,12 +1,15 @@
-import { Image, StyleSheet, Platform } from 'react-native';
-
+import React from 'react';
+import { Image, StyleSheet, Dimensions, View } from 'react-native';
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { Collapsible } from '@/components/Collapsible';
-import { ExternalLink } from '@/components/ExternalLink';
-import { C42_GREEN, C42_GREEN_DARK } from '@/constants/Colors';
+import { C42_GREEN, C42_GREEN_DARK } from '@/style/Colors';
+import Button42 from '@/components/ui/Button42';
+
+// Get the width of the screen
+const { width: screenWidth } = Dimensions.get('window');
 
 const HomeScreen = () => {
   return (
@@ -24,78 +27,38 @@ const HomeScreen = () => {
         <HelloWave />
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText>
-          <ThemedText type="defaultSemiBold">42-companion</ThemedText> is
-          helpful to:
-        </ThemedText>
-        <Collapsible title="Track 42 students contacts">
-          <ThemedText>
-            - login
-            <br />
-            - email
-            <br />
-            - mobile
-            <br />
-            - location
-            <br />- profile picture
-          </ThemedText>
+        <ThemedText type="subtitle">42-companion is helpful to:</ThemedText>
+        <Collapsible title="Get 42 students' contacts">
+          <View>
+            <ThemedText>- login</ThemedText>
+            <ThemedText>- email</ThemedText>
+            <ThemedText>- mobile</ThemedText>
+            <ThemedText>- location</ThemedText>
+            <ThemedText>- profile picture</ThemedText>
+          </View>
         </Collapsible>
-        <Collapsible title="Track 42 students progress">
-          <ThemedText>
-            - level
-            <br />
-            - wallet
-            <br />- skills
-          </ThemedText>
+        <Collapsible title="Track 42 students' progress">
+          <View>
+            <ThemedText>- level</ThemedText>
+            <ThemedText>- wallet</ThemedText>
+            <ThemedText>- skills</ThemedText>
+          </View>
         </Collapsible>
-        <Collapsible title="Track 42 students activity">
-          <ThemedText>
-            - projects
-            <br />- evaluations
-          </ThemedText>
+        <Collapsible title="Check 42 students' activity">
+          <View>
+            <ThemedText>- projects</ThemedText>
+            <ThemedText>- evaluations</ThemedText>
+          </View>
         </Collapsible>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this
-          starter app.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this
-          starter app.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this
-          starter app.
-        </ThemedText>
-      </ThemedView>{' '}
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this
-          starter app.
-        </ThemedText>
-      </ThemedView>{' '}
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this
-          starter app.
-        </ThemedText>
-      </ThemedView>{' '}
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this
-          starter app.
-        </ThemedText>
+        <ThemedText type="subtitle">To start, please login:</ThemedText>
+        <Button42
+          title="Login"
+          onPress={() => {
+            console.log('Login button pressed');
+          }}
+        />
       </ThemedView>
     </ParallaxScrollView>
   );
@@ -117,7 +80,7 @@ const styles = StyleSheet.create({
     height: 242,
     width: 242,
     bottom: 0,
-    left: 0,
+    left: screenWidth * 0.09, // Shift to left by XX% of the view width
     position: 'absolute'
   }
 });

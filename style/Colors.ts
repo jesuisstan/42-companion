@@ -12,7 +12,7 @@ export const C42_GREY_DARK = '#aaaaaa';
 export const C42_VIOLET = '#a2b3e5';
 export const C42_VIOLET_DARK = '#7e93d4';
 export const C42_TEXT = '#2c2c34';
-export const C42_TEXT_DARK = '#aaaaaa';
+export const C42_TEXT_DARK = '#ED8179';
 export const C42_BACKGROUND = 'rgba(255, 255, 255, 0)';
 export const C42_BACKGROUND_DARK = '#151718';
 
@@ -20,6 +20,7 @@ export const Colors = {
   light: {
     text: C42_TEXT,
     background: C42_BACKGROUND,
+    border: C42_ORANGE,
     tint: C42_GREEN,
     icon: C42_ORANGE,
     tabIconDefault: C42_ORANGE,
@@ -28,6 +29,7 @@ export const Colors = {
   dark: {
     text: C42_TEXT_DARK,
     background: C42_BACKGROUND_DARK,
+    border: C42_ORANGE_DARK,
     tint: C42_GREEN_DARK,
     icon: C42_ORANGE_DARK,
     tabIconDefault: C42_ORANGE_DARK,
