@@ -9,6 +9,7 @@ import { Moon, Sun } from 'lucide-react-native';
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { C42_GREEN_DARK, C42_TEXT, C42_BACKGROUND } from '@/style/Colors';
 import { DarkTheme, LightTheme } from '@/style/themes';
+import ButtonTheme from '@/components/ui/ButtonTheme';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -45,9 +46,7 @@ const RootLayout = () => {
         </Stack>
 
         {/* Floating Theme Button */}
-        <TouchableOpacity style={styles.floatingButton} onPress={toggleTheme}>
-          {theme === 'dark' ? <Moon size={21} /> : <Sun size={21} />}
-        </TouchableOpacity>
+        <ButtonTheme theme={theme} setTheme={setTheme} />
       </View>
     </ThemeProvider>
   );
@@ -61,7 +60,8 @@ const styles = StyleSheet.create({
   floatingButton: {
     position: 'absolute',
     bottom: 10,
-    right: 10,
+    left: '50%',
+    marginLeft: -15, // Half of the button's width to center it
     width: 30,
     height: 30,
     borderRadius: 28, // Make it circular
