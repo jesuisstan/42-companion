@@ -4,8 +4,7 @@ import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useState, useEffect } from 'react';
 import 'react-native-reanimated';
-import { View, TouchableOpacity, StyleSheet, Text } from 'react-native';
-import { Moon, Sun } from 'lucide-react-native';
+import { View, StyleSheet } from 'react-native';
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { C42_GREEN_DARK, C42_TEXT, C42_BACKGROUND } from '@/style/Colors';
 import { DarkTheme, LightTheme } from '@/style/themes';
@@ -26,11 +25,6 @@ const RootLayout = () => {
       SplashScreen.hideAsync();
     }
   }, [loaded]);
-
-  const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme);
-  };
 
   if (!loaded) {
     return null;
@@ -56,29 +50,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     position: 'relative'
-  },
-  floatingButton: {
-    position: 'absolute',
-    bottom: 10,
-    left: '50%',
-    marginLeft: -15, // Half of the button's width to center it
-    width: 30,
-    height: 30,
-    borderRadius: 28, // Make it circular
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: C42_GREEN_DARK, // Default background color
-    elevation: 4, // for Android shadow
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.3,
-    shadowRadius: 2,
-    zIndex: 100, // Ensure it's above other components
-    opacity: 0.8 // Make it slightly transparent
-  },
-  buttonText: {
-    color: '#ffffff',
-    fontSize: 16
   }
 });
 

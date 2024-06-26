@@ -1,5 +1,5 @@
 import 'react-native-reanimated';
-import { TouchableOpacity, StyleSheet, Text } from 'react-native';
+import { TouchableOpacity, StyleSheet } from 'react-native';
 import { Moon, Sun } from 'lucide-react-native';
 import { C42_GREEN_DARK, C42_TEXT, C42_BACKGROUND } from '@/style/Colors';
 
@@ -21,10 +21,6 @@ const ButtonTheme = ({ theme, setTheme }: { theme: any; setTheme: any }) => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    position: 'relative'
-  },
   floatingButton: {
     position: 'absolute',
     bottom: 10,
@@ -43,10 +39,6 @@ const styles = StyleSheet.create({
     shadowRadius: 2,
     zIndex: 100, // Ensure it's above other components
     opacity: 0.9 // Make it slightly transparent
-  },
-  buttonText: {
-    color: '#ffffff',
-    fontSize: 16
   }
 });
 
