@@ -1,5 +1,5 @@
 import 'react-native-reanimated';
-import { TouchableOpacity, StyleSheet } from 'react-native';
+import { Pressable, StyleSheet } from 'react-native';
 import { Moon, Sun } from 'lucide-react-native';
 import { C42_GREEN_DARK, C42_TEXT, C42_BACKGROUND } from '@/style/Colors';
 
@@ -10,13 +10,13 @@ const ButtonTheme = ({ theme, setTheme }: { theme: any; setTheme: any }) => {
   };
 
   return (
-    <TouchableOpacity style={styles.floatingButton} onPress={toggleTheme}>
+    <Pressable style={styles.floatingButton} onPress={toggleTheme}>
       {theme === 'dark' ? (
         <Moon size={21} color={'#151718'} />
       ) : (
         <Sun size={21} color={'#151718'} />
       )}
-    </TouchableOpacity>
+    </Pressable>
   );
 };
 
