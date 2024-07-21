@@ -9,6 +9,9 @@ npm-debug.*
 *.mobileprovision
 *.orig.*
 web-build/
+android/
+ios/
+web/
 
 # macOS
 .DS_Store
@@ -19,3 +22,21 @@ web-build/
 
 expo-env.d.ts
 # @end expo-cli
+
+# Ignore everything in the credentials folder
+credentials/*
+
+# Except for README.MD
+!credentials/README.MD
+
+# Other specific credentials files
+google-services.json
+firebase-config.*
+credentials.json
+credentials/firebase-config.*
+
+# local env files
+.env
+.env.development
+.env.production
+.env*.local
