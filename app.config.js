@@ -13,6 +13,7 @@ export default {
       backgroundColor: '#00babc'
     },
     android: {
+      package: 'com.krivtsoff.companion42',
       adaptiveIcon: {
         foregroundImage: './assets/images/adaptive-icon.png',
         backgroundColor: '#00babc'
